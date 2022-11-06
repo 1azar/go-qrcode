@@ -205,8 +205,8 @@ func WithBorderWidth(widths ...int) ImageOption {
 	})
 }
 
-// WithHalftone ...
-func WithHalftone(path string) ImageOption {
+// WithHalftoneFile from file
+func WithHalftoneFile(path string) ImageOption {
 	return newFuncOption(func(oo *outputImageOptions) {
 		srcImg, err := imgkit.Read(path)
 		if err != nil {
@@ -215,6 +215,16 @@ func WithHalftone(path string) ImageOption {
 		}
 
 		oo.halftoneImg = srcImg
+	})
+}
+
+// WithHalftoneImage from image.Image object
+func WithHalftoneImage(img image.Image) ImageOption {
+	return newFuncOption(func(oo *outputImageOptions) {
+		if img == nil {
+			return
+		}
+		oo.halftoneImg = img
 	})
 }
 

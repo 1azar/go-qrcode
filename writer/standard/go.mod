@@ -1,4 +1,4 @@
-module github.com/yeqown/go-qrcode/writer/standard
+module github.com/1azar/go-qrcode/writer/standard
 
 go 1.17
 
@@ -7,6 +7,7 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/stretchr/testify v1.7.0
 	github.com/yeqown/go-qrcode/v2 v2.2.0
+	github.com/yeqown/go-qrcode/writer/standard v1.2.1
 	golang.org/x/image v0.0.0-20200927104501-e162460cd6b5
 )
 
