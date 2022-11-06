@@ -1,4 +1,4 @@
-module go-qrcode
+module github.com/1azar/go-qrcode
 
 go 1.19
 
