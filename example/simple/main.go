@@ -31,7 +31,7 @@ func main() {
 	// get bytes
 	buf := bytes.NewBuffer(nil)
 	wr := nopCloser{Writer: buf}
-	w2 := standard.NewWithWriter(wr, standard.WithQRWidth(40))
+	w2 := standard.NewWithWriter(wr, standard.WithQRWidth(40), standard.WithFgColor())
 	if err = qrc.Save(w2); err != nil {
 		panic(err)
 	}

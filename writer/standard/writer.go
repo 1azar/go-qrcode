@@ -149,6 +149,10 @@ func draw(mat qrcode.Matrix, opt *outputImageOptions) image.Image {
 		ctx.w, ctx.h = opt.qrBlockWidth(), opt.qrBlockWidth()
 		ctx.color = opt.translateToRGBA(v)
 
+		if opt.qrGradient != nil && v.IsSet() {
+			ctx.color = opt.qrGradient.At(ctx.x, ctx.y, w, h)
+		}
+
 		// DONE(@yeqown): make this abstract to Shapes
 		switch typ := v.Type(); typ {
 		case qrcode.QRType_FINDER:
